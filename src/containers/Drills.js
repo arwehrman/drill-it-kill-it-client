@@ -1,15 +1,18 @@
-import React from 'react';
+import React, { Component } from 'react';
+import DrillCard from '../components/DrillCard';
+import DrillForm from './DrillForm'
 
-const Drills = (props) => (
-  <div>
-    <h1>Drills</h1>
-    {props.drills.map(drill =>
-      <div key={drill.id}>
-        <h3>{drill.title}</h3>
-        <p>{drill.description}</p>
-        <p>{drill.category}</p>
+class Drills extends Component {
+
+  render(){
+    return (
+      <div>
+        <DrillForm />
+        <h3>List of Drills</h3>
+        {this.props.drills.map(drill => < DrillCard key={ drill.id } drill={ drill } />)}
       </div>
-    )}
-  </div>
-)
+    )
+  }
+}
+
 export default Drills;

@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import Drills from './containers/Drills'
 import './App.css';
 
+const API_URL = process.env.REACT_APP_API_URL;
+
 class App extends Component {
   constructor(props){
     super(props)
@@ -10,9 +12,9 @@ class App extends Component {
       drills: []
     }
   }
-  
+
   componentDidMount() {
-    fetch('http://localhost:3001/api/drills')
+    fetch(`${API_URL}/drills`)
     .then(response => response.json())
     .then(drills => this.setState({ drills }))
   }

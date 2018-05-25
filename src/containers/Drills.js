@@ -1,8 +1,13 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import DrillCard from '../components/DrillCard';
+import { getDrills } from '../actions/drills'
 import DrillForm from './DrillForm'
 
 class Drills extends Component {
+  componentDidMount() {
+    this.props.getDrills()
+  }
 
   render(){
     return (
@@ -15,4 +20,10 @@ class Drills extends Component {
   }
 }
 
-export default Drills;
+const mapStateToProps = (state) => {
+  return({
+    drills: state.drills
+  })
+}
+
+export default connect(mapStateToProps, {getDrills})(Drills);

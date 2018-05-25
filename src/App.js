@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import Drills from './containers/Drills'
 import './App.css';
 
-
-
 class App extends Component {
   render() {
     return (

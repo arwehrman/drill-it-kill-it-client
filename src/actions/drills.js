@@ -9,7 +9,7 @@ const setDrills = drills =>{
 
 export const getDrills = () => {
   return dispatch => {
-    return fetch('{API_URL}/drills')
+    return fetch(`${API_URL}/drills`)
     .then(response => response.json())
     .then(drills => dispatch(setDrills(drills)))
     .catch(error => console.log(error));

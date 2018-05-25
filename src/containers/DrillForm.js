@@ -19,7 +19,6 @@ class DrillForm extends Component{
   }
 
   handleFormSubmit = event => {
-    console.log(this.state)
     event.preventDefault();
     const { title, description, category  } = this.state;
     console.log(this.state)

@@ -1,52 +1,45 @@
 import React, { Component } from 'react';
+import {connect} from 'react-redux';
+import {updateDrillFormData} from '../actions/drillForm'
+import {createDrill} from '../actions/drills'
 
 class DrillForm extends Component{
-  constructor(props){
-    super(props);
 
-    this.state = {
-      title: '',
-      description: '',
-      category: '',
-    };
-  }
-
-  handleChange = (event) => {
+  handleChange = event => {
     const { name, value } = event.target;
-    this.setState({
-      [name]: value,
-    });
+    const currentDrillForm = Object.assign({}, this.props.drillFormData, {[name]: value})
+    this.props.updateDrillFormData(currentDrillForm)
   }
 
   handleFormSubmit = event => {
     event.preventDefault();
-    const { title, description, category  } = this.state;
-    console.log(this.state)
-    this.state.onSubmit({ title, description, category });
+    this.props.createDrill(this.props.drillFormData);
   };
 
   render() {
+    const {title, description, category} = this.props.drillFormData;
     return (
       <div>
         <h3>Add A Drill</h3>
         <form onSubmit={this.handleFormSubmit}>
+          <p>Enter A Drill</p>
           <input
             type="text"
             name="title"
-            value={this.state.title}
-            onChange={this.handleChange}
+            value={title}
+            onChange={ (event) => this.handleChange(event)}
             placeholder="Title"></input><br/><br/>
           <textarea
             type="text"
             name="description"
-            value={this.state.description}
-            onChange={this.handleChange}
+            value={description}
+            onChange={ (event) => this.handleChange(event)}
             placeholder="Description"></textarea><br/><br/>
             <input
               type="text"
               name="category"
-              value={this.state.category}
-              onChange={this.handleChange}
+              value={category}
+              onChange={ (event) => this.handleChange(event)}
               placeholder="Category"></input><br/><br/>
           <button type="submit">Submit</button>
         </form>
@@ -55,4 +48,13 @@ class DrillForm extends Component{
   }
 }
 
-export default DrillForm;
+const mapStateToProps = state => {
+  return {
+    drillFormData: state.drillFormData
+  }
+}
+
+export default connect(mapStateToProps, {
+  updateDrillFormData,
+  createDrill
+})(DrillForm);

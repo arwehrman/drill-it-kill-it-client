@@ -8,6 +8,7 @@ export default(state = [], action) => {
     case 'CREATE_DRILL':
       return state.concat(action.drill);
 
+
     default:
       return state;
   }

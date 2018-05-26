@@ -22,7 +22,6 @@ class DrillForm extends Component{
       <div>
         <h3>Add A Drill</h3>
         <form onSubmit={this.handleFormSubmit}>
-          <p>Enter A Drill</p>
           <input
             type="text"
             name="title"

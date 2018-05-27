@@ -12,12 +12,8 @@ class App extends Component {
       <div>
         <Header />
         <Navigation />
-        <div className="row">
-          <DrillForm />
-          <Drills />
-
-        </div>
-
+        <DrillForm />
+        <Drills />
         <Footer />
       </div>
     );

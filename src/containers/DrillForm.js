@@ -5,7 +5,7 @@ import {createDrill} from '../actions/drills'
 
 class DrillForm extends Component{
 
-  handleChange = event => {
+  handleOnChange = event => {
     const { name, value } = event.target;
     const currentDrillForm = Object.assign({}, this.props.drillFormData, {[name]: value})
     this.props.updateDrillFormData(currentDrillForm)
@@ -27,20 +27,23 @@ class DrillForm extends Component{
             type="text"
             name="title"
             value={title}
-            onChange={ (event) => this.handleChange(event)}
+            onChange={ event => this.handleOnChange(event)}
             placeholder="Title"></input><br/><br/>
           <textarea
             type="text"
             name="description"
             value={description}
-            onChange={ (event) => this.handleChange(event)}
+            onChange={ event => this.handleOnChange(event)}
             placeholder="Description"></textarea><br/><br/>
-            <input
+            <select
               type="text"
               name="category"
               value={category}
-              onChange={ (event) => this.handleChange(event)}
-              placeholder="Category"></input><br/><br/>
+              onChange={ event => this.handleOnChange(event)}>
+                <option value= {category}>Defense</option>
+                <option value={category}>Jammer</option>
+                <option value={category}>Offense</option>
+              </select><br/><br/>
           <button type="submit">Submit</button>
         </form>
       </div>

@@ -40,6 +40,7 @@ class DrillForm extends Component{
               name="category"
               value={category}
               onChange={ event => this.handleOnChange(event)}>
+                <option></option>
                 <option value= {category}>Defense</option>
                 <option value={category}>Jammer</option>
                 <option value={category}>Offense</option>
@@ -47,7 +48,6 @@ class DrillForm extends Component{
           <button type="submit">Submit</button>
         </form>
       </div>
-
     )
   }
 }

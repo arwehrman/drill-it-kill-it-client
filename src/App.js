@@ -12,9 +12,9 @@ class App extends Component {
       <div>
         <Header />
         <Navigation />
-        <div className="main">
-        <DrillForm />
-        <Drills />
+        <div className="row">
+          <DrillForm />
+          <Drills />
         </div>
         <Footer />
       </div>

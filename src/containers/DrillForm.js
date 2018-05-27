@@ -35,7 +35,7 @@ class DrillForm extends Component{
             value={description}
             onChange={ event => this.handleOnChange(event)}
             placeholder="Description"></textarea><br/><br/>
-            <select
+            Category:  <select
               type="text"
               name="category"
               value={category}

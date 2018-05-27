@@ -1,7 +1,7 @@
 import React from 'react';
 
 export const Header = () => (
-  <div>
+  <div className="header">
     <h1>Drill It Kill It</h1>
   </div>
 );

@@ -20,7 +20,7 @@ class DrillForm extends Component{
     const {title, description, category} = this.props.drillFormData;
     return (
 
-      <div>
+      <div className="drillform">
         <h3>Add A Drill</h3>
         <form onSubmit={this.handleFormSubmit}>
           <input

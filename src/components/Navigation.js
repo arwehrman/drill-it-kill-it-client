@@ -1,7 +1,8 @@
 import React from 'react';
 
 export const Navigation = () => (
-  <div>
+  <div  className="navigation">
+    <p>Navigation</p>
   </div>
 );
 

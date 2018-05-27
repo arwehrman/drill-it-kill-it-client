@@ -11,7 +11,7 @@ class Drills extends Component {
 
   render(){
     return (
-      <div>
+      <div className="drills">
         <h3>List of Drills</h3>
         {this.props.drills.map(drill => < DrillCard key={ drill.id } drill={ drill } />)}
       </div>

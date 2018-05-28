@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import DrillCard from '../components/DrillCard';
-import { getDrills } from '../actions/drills'
+import { getDrills, likeDrill, deleteDrill } from '../actions/drills'
 
 
 class Drills extends Component {
@@ -13,7 +13,7 @@ class Drills extends Component {
     return (
       <div className="drills">
         <h3>List of Drills</h3>
-        {this.props.drills.map(drill => < DrillCard key={ drill.id } id={drill.id} drill={ drill } />)}
+        {this.props.drills.map(drill => < DrillCard key={ drill.id } id={drill.id} likeDrill={likeDrill} deleteDrill={deleteDrill} drill={ drill } />)}
       </div>
     )
   }
@@ -25,4 +25,4 @@ const mapStateToProps = (state) => {
   })
 }
 
-export default connect(mapStateToProps, {getDrills})(Drills);
+export default connect(mapStateToProps, {getDrills, likeDrill, deleteDrill})(Drills);

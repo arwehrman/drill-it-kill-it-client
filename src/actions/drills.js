@@ -15,12 +15,20 @@ const addDrill = drill => {
   }
 }
 
-const removeDrill = drill => {
+const removeDrill = drillId => {
   return {
     type: "DELETE_DRILL",
-    drill
+    drillId
     }
 }
+
+export const likeDrill = drill => {
+  return {
+    type: 'LIKE_DRILL',
+    drill
+  }
+}
+
 
 export const getDrills = () => {
   return dispatch => {

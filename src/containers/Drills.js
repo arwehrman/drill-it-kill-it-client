@@ -13,7 +13,7 @@ class Drills extends Component {
     return (
       <div className="drills">
         <h3>List of Drills</h3>
-        {this.props.drills.map(drill => < DrillCard key={ drill.id } drill={ drill } />)}
+        {this.props.drills.map(drill => < DrillCard key={ drill.id } id={drill.id} drill={ drill } />)}
       </div>
     )
   }

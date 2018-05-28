@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import {connect} from 'react-redux';
-import {updateDrillFormData} from '../actions/drillForm'
-import {createDrill} from '../actions/drills'
+import { connect } from 'react-redux';
+import { updateDrillFormData } from '../actions/drillForm'
+import { createDrill } from '../actions/drills'
 
 class DrillForm extends Component{
 
@@ -35,15 +35,15 @@ class DrillForm extends Component{
             value={description}
             onChange={ event => this.handleOnChange(event)}
             placeholder="Description"></textarea><br/><br/>
-            Category:  <select
+         <select
               type="text"
               name="category"
               value={category}
               onChange={ event => this.handleOnChange(event)}>
                 <option></option>
-                <option value= {category}>Defense</option>
-                <option value={category}>Jammer</option>
-                <option value={category}>Offense</option>
+                <option value="Defense">Defense</option>
+                <option value="Jammer">Jammer</option>
+                <option value="Offense">Offense</option>
               </select><br/><br/>
           <button type="submit">Submit</button>
         </form>

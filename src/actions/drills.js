@@ -15,6 +15,13 @@ const addDrill = drill => {
   }
 }
 
+const removeDrill = drill => {
+  return {
+    type: "DELETE_DRILL",
+    drill
+    }
+}
+
 export const getDrills = () => {
   return dispatch => {
     return fetch(`${API_URL}/drills`)
@@ -36,6 +43,23 @@ export const createDrill = drill => {
     .then(drill => {
       dispatch(addDrill(drill))
       dispatch(resetDrillForm())
+    })
+    .catch(error => console.log(error))
+  }
+}
+
+export const deleteDrill = drill => {
+  return dispatch => {
+    return fetch(`${API_URL}/drills/${drill.id}`, {
+      method: "DELETE",
+      headers: {
+        'Content-Type': 'application/json'
+      }, body: JSON.stringify({ drill: drill })
+    })
+    .then(response => response.json())
+    .then(drill => {
+    dispatch(removeDrill(drill))
+
     })
     .catch(error => console.log(error))
   }

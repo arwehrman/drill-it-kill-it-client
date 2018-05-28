@@ -8,6 +8,9 @@ export default(state = [], action) => {
     case 'CREATE_DRILL':
       return state.concat(action.drill);
 
+    case 'DELETE_DRILL':
+      const drills = state.drills.filter(drill => drill.id !== action.id)
+      return { drills }
 
     default:
       return state;

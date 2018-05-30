@@ -5,7 +5,6 @@ export const Navigation = () => (
     <a href="#home">Home</a>
     <a href="#drills">Drills</a>
     <a href="#contact">Contact</a>
-    <a href="#about">About</a>
   </div>
 );
 

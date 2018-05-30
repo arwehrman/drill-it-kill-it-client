@@ -10,10 +10,11 @@ class Drills extends Component {
   }
 
   render(){
+     const { drills, likeDrill, deleteDrill } = this.props;
     return (
       <div className="drills">
         <h3>List of Drills</h3>
-        {this.props.drills.map(drill => < DrillCard key={ drill.id } id={drill.id} likeDrill={likeDrill} deleteDrill={deleteDrill} drill={ drill } />)}
+        {drills.map(drill => < DrillCard key={ drill.id } id={drill.id} likeDrill={likeDrill} deleteDrill={deleteDrill} drill={ drill } />)}
       </div>
     )
   }

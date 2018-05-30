@@ -6,6 +6,7 @@ import { createDrill } from '../actions/drills'
 class DrillForm extends Component{
 
   handleOnChange = event => {
+    console.log("onChange")
     const { name, value } = event.target;
     const currentDrillForm = Object.assign({}, this.props.drillFormData, {[name]: value})
     this.props.updateDrillFormData(currentDrillForm)
@@ -13,6 +14,7 @@ class DrillForm extends Component{
 
   handleFormSubmit = event => {
     event.preventDefault();
+    console.log('form')
     this.props.createDrill(this.props.drillFormData);
   };
 

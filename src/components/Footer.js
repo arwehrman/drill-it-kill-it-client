@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const Footer = () => (
+const Footer = () => (
   <div className="footer">
     <h4>@DrillItKillIt</h4>
   </div>

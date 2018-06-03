@@ -1,11 +1,15 @@
 import React from 'react';
 
-export const Home = () => (
+const Home = () => (
   <div className="home">
-    <h2>Home Page</h2>
-    <p>IMG</p>
+    <h2>Welcome to Drill It Kill It</h2>
+    <p>Drill It Kill It is a central hub to keep track of and share roller derby drills.</p>
+    <div className="updates">
     <p>Updates</p>
-    <p>Info</p>
+    </div>
+    <div className="spotlight">
+      <p>Spotlight</p>
+    </div>
   </div>
 );
 

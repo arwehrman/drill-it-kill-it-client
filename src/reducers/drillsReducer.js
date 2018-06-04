@@ -7,10 +7,12 @@ export default(state = [], action) => {
       return action.drills;
 
     case 'CREATE_DRILL':
-      return state.concat(action.drill);
+      const drill = Object.assign({}, action.drill)
+      return [...state, drill];
 
     case 'DELETE_DRILL':
-      return state.drills.filter(drill => drill.id !== action.id)
+      const newdrills = state.drills.filter(drill => drill.id !== action.id)
+      return [...state, newdrills];
 
     case 'LIKE_DRILL':
       return action.drills

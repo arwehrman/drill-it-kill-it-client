@@ -3,14 +3,13 @@ import React from 'react'
 
 const DrillCard = ({ drill, likeDrill, deleteDrill }) => {
 
-  const handleOnClick = () => {
+  const handleOnClick = (drilll) => {
     console.log(drill.id)
     deleteDrill(drill)
   }
 
   const handleLikesClick = () => {
-    console.log('clicked')
-    deleteDrill()
+    console.log(drill.id)
   }
 
 return (
@@ -20,12 +19,10 @@ return (
         <p>Description: {drill.description}</p>
         <p>Category: {drill.category}</p>
         <p>Likes: {drill.likes}</p>
-        <button onClick={() => handleOnClick(drill.id)}>Delete</button>
-        <button onClick={() => handleLikesClick(drill.id)}>Like</button>
+        <button onClick={() => handleOnClick(drill)}>Delete</button>
+        <button onClick={() => handleLikesClick(drill)}>Like</button>
       </div>
     )
 }
-
-
 
 export default DrillCard;

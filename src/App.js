@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Drills from './containers/Drills';
-import DrillForm from './containers/DrillForm';
 import Header from './components/Header';
 import Home from './components/Home';
 import Contact from './components/Contact'
@@ -19,7 +18,7 @@ class App extends Component {
           <div>
           <Route exact path='/' component={Home} />
           <Route exact path='/drills' component={Drills} />
-          <Route exact path= '/drill/new' component={DrillForm} />
+
           <Route exact path='/contact' component={Contact} />
         </div>
           <Footer />

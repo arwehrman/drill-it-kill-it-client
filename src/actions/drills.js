@@ -1,6 +1,5 @@
 import {resetDrillForm} from './drillForm'
 
-
 const API_URL = process.env.REACT_APP_API_URL;
 
 const setDrills = drills =>{
@@ -21,17 +20,16 @@ const addDrill = drill => {
 const removeDrill = (drill) => {
   return {
     type: 'DELETE_DRILL',
-    drill: drill,
+    drill: drill
     }
 }
 
-export const likeDrill = drillId => {
+export const likeDrill = drill => {
   return {
     type: 'LIKE_DRILL',
-    drillId
+    drill: drill.id,
   }
 }
-
 
 export const getDrills = () => {
   return dispatch => {
@@ -65,10 +63,10 @@ export const deleteDrill = drill => {
       method: "DELETE",
       headers: {
         'Content-Type': 'application/json'
-      }, body: JSON.stringify({ drill: drill })
+      }, body: JSON.stringify({ drill: drill }),
     })
     .then(response => response.json())
-    .then(drill => { dispatch(removeDrill(drill.id))})
+    .then(drill => dispatch(removeDrill(drill)))
     .catch(error => console.log(error))
   }
 }

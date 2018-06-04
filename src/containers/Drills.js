@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import DrillCard from '../components/DrillCard';
+import DrillForm from './DrillForm'
 import { getDrills, likeDrill, deleteDrill } from '../actions/drills'
-
 
 class Drills extends Component {
   componentDidMount() {
@@ -12,9 +12,12 @@ class Drills extends Component {
   render(){
      const { drills, likeDrill, deleteDrill } = this.props;
     return (
-      <div className="drills">
-        <h3>List of Drills</h3>
-        {drills.map(drill => < DrillCard key={ drill.id } id={drill.id} likeDrill={likeDrill} deleteDrill={deleteDrill} drill={ drill } />)}
+      <div>
+        <DrillForm />
+        <div className="drills">
+          <h3>List of Drills</h3>
+          {drills.map(drill => < DrillCard key={ drill.id } id={drill.id} likeDrill={likeDrill} deleteDrill={deleteDrill} drill={ drill } />)}
+      </div>
       </div>
     )
   }

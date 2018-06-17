@@ -21,7 +21,7 @@ const addDrill = drill => {
 const removeDrill = drillId => {
   return {
     type: DELETE_DRILL,
-    drillID: drillId
+    drillID: drillId,
     }
 }
 
@@ -59,7 +59,7 @@ export const createDrill = drill => {
 }
 
 export function deleteDrill(drillId) {
-  return (dispatch) => {
+  return dispatch => {
     return fetch(`${API_URL}/drills/${drillId}`, {
       method: 'DELETE',
     }).then(res => { dispatch(removeDrill(drillId))

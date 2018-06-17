@@ -9,10 +9,6 @@ class Drill extends Component {
       this.handleDelete = this.handleDelete.bind(this)
     }
 
-    shouldComponentUpdate(nextProps, nextState) {
-      return true
-    }
-
     handleDelete = () => {
       const { drill } = this.props
       this.props.deleteDrill(drill.id)

@@ -11,8 +11,7 @@ export default(state = [], action) => {
       return [...state, drill];
 
     case 'DELETE_DRILL':
-      const newdrills = state.drills.filter(drill => drill.id !== action.id)
-      return [...state, newdrills];
+     return state.filter(drill => drill.id !== action.drillId);
 
     case 'LIKE_DRILL':
       return action.drills

@@ -1,10 +1,11 @@
-import {resetDrillForm} from './drillForm'
+import {resetDrillForm} from './drillForm';
+import { GET_DRILLS, CREATE_DRILL, DELETE_DRILL, LIKE_DRILL } from '../constants/actionTypes';
 
 const API_URL = process.env.REACT_APP_API_URL;
 
-const setDrills = drills =>{
+const setDrills = drills => {
   return{
-    type: 'GET_DRILLS',
+    type: GET_DRILLS,
     drills
   }
 }
@@ -12,22 +13,22 @@ const setDrills = drills =>{
 const addDrill = drill => {
 
   return {
-    type: 'CREATE_DRILL',
+    type: CREATE_DRILL,
     drill,
   }
 }
 
-const removeDrill = (drill) => {
+const removeDrill = drillId => {
   return {
-    type: 'DELETE_DRILL',
-    drill: drill
+    type: DELETE_DRILL,
+    drillID: drillId
     }
 }
 
-export const likeDrill = drill => {
+export const likeDrill = drillId => {
   return {
-    type: 'LIKE_DRILL',
-    drill: drill.id,
+    type: LIKE_DRILL,
+    drillId: drillId,
   }
 }
 
@@ -57,16 +58,11 @@ export const createDrill = drill => {
   }
 }
 
-export const deleteDrill = drill => {
-  return dispatch => {
-    return fetch(`${API_URL}/drills/${drill.id}`, {
-      method: "DELETE",
-      headers: {
-        'Content-Type': 'application/json'
-      }, body: JSON.stringify({ drill: drill }),
+export function deleteDrill(drillId) {
+  return (dispatch) => {
+    return fetch(`${API_URL}/drills/${drillId}`, {
+      method: 'DELETE',
+    }).then(res => { dispatch(removeDrill(drillId))
     })
-    .then(response => response.json())
-    .then(drill => dispatch(removeDrill(drill)))
-    .catch(error => console.log(error))
   }
 }

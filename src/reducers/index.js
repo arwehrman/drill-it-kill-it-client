@@ -3,5 +3,5 @@ import drills from './drillsReducer';
 import drillFormData from './drillFormData';
 
 export default combineReducers({
-  drills, drillFormData,
+  drills, drillFormData, 
 });

@@ -1,5 +1,4 @@
 import { GET_DRILLS, CREATE_DRILL, DELETE_DRILL, LIKE_DRILL } from '../constants/actionTypes';
-import { browserHistory } from 'react-router';
 
 export default(state = [], action) => {
 
@@ -18,12 +17,17 @@ export default(state = [], action) => {
         return drill.id === action.id
       })
       newState.splice(indexOfDrillToDelete, 1);
-      browserHistory.push('/drills');
       return newState;
     }
 
     case LIKE_DRILL:
-      return action.drills
+    return state.map((drill) => {
+      if (drill.id === action.id) {
+        return action.drill
+      } else {
+        return drill
+      }
+    });
 
     default:
       return state;

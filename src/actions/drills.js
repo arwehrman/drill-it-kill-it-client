@@ -25,7 +25,7 @@ const removeDrill = drillId => {
     }
 }
 
-export const likeDrill = drillId => {
+export const addLike = drillId => {
   return {
     type: LIKE_DRILL,
     drillId: drillId,
@@ -57,6 +57,22 @@ export const createDrill = drill => {
     .catch(error => console.log(error))
   }
 }
+
+export const likeDrill = (drill) => {
+  const updatedDrill = Object.assign(...drill, { likes: drill.likes + 1 })
+  return dispatch => {
+    return fetch(`${API_URL}/drills/${drill.id}`, {
+      method: "PUT",
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({drill: updatedDrill})
+      })
+      .then(response => response.json())
+      .then(drill => { dispatch(addLike(drill))})
+  }
+}
+
 
 export function deleteDrill(drillId) {
   return dispatch => {

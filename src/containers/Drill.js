@@ -4,22 +4,14 @@ import DrillCard from '../components/DrillCard';
 import { likeDrill, deleteDrill, getDrills } from '../actions/drills'
 
 class Drill extends Component {
-  constructor(props) {
-      super(props);
-      this.handleDelete = this.handleDelete.bind(this)
-    }
-
-    handleDelete = () => {
-      const { drill } = this.props
-      this.props.deleteDrill(drill.id)
-    }
 
   render(){
-     const { drill } = this.props;
+     const { drill, deleteDrill, likeDrill} = this.props;
     return (
       <div>
         <DrillCard  drill={drill}/>
-        <button  onClick={this.handleDelete}>Delete</button>
+      <button onClick={() => deleteDrill(drill.id)}>Delete</button>
+      <button onClick={() => likeDrill(drill)}>Like</button>
     </div>
     )
   }

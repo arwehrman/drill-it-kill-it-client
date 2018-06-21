@@ -59,7 +59,7 @@ export const createDrill = drill => {
 }
 
 export const likeDrill = (drill) => {
-  const updatedDrill = Object.assign(...drill, { likes: drill.likes + 1 })
+  const updatedDrill = Object.assign(...drill, { likes: drill.likes += 1 })
   return dispatch => {
     return fetch(`${API_URL}/drills/${drill.id}`, {
       method: "PUT",

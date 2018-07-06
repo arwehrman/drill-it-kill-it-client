@@ -25,10 +25,10 @@ const removeDrill = drillId => {
     }
 }
 
-export const addLike = drillId => {
+export const addLike = drill => {
   return {
     type: LIKE_DRILL,
-    drillId: drillId,
+    drillId: drill,
   }
 }
 
@@ -58,7 +58,7 @@ export const createDrill = drill => {
   }
 }
 
-export const likeDrill = (drill) => {
+export const likeDrill = drill => {
   const updatedDrill = Object.assign(...drill, { likes: drill.likes += 1 })
   return dispatch => {
     return fetch(`${API_URL}/drills/${drill.id}`, {

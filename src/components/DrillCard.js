@@ -3,7 +3,7 @@ import React from 'react'
 
 const DrillCard = ({ drill }) => {
 return (
-      <div className="card" >
+      <div className="drillcard" >
         <h3>{drill.title}</h3>
         <p>{drill.id}</p>
         <p>Description: {drill.description}</p>

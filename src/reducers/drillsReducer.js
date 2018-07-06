@@ -8,8 +8,7 @@ export default(state = [], action) => {
       return action.drills;
 
     case CREATE_DRILL:
-      const drill = Object.assign({}, action.drill)
-      return [...state, drill];
+    return [...state, action.drill];
 
     case DELETE_DRILL:{
       const newState = Object.assign([], state);

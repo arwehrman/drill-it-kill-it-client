@@ -2,9 +2,9 @@ import React from 'react';
 
 export const Contact = () => (
   <div>
-    <h2>Contact Page</h2>
-    <p>email: </p>
-    <p>maybe a contact form? </p>
+    <h2>Contact Us</h2>
+    <p>Have suggestions to improve Drill It Kill it?</p>
+    <p>please email us at: drillitkillit@gmail.com</p>
   </div>
 );
 

@@ -9,6 +9,7 @@ import Footer from './components/Footer';
 import NavBar from './components/NavBar';
 import './App.css';
 
+
 class App extends Component {
   render() {
     return (
@@ -17,6 +18,7 @@ class App extends Component {
           <Header />
           <NavBar />
           <div>
+            <br />
           <Route exact path='/' component={Home} />
           <Route path='/drills' component={Drills} />
           <Route path='/contact' component={Contact} />

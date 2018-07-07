@@ -5,18 +5,19 @@
 body {
    font-family: Arial;
    padding: 10px;
-   background: #f1f1f1;
+   background: #deeff5;
 }
 
 /* Header/Blog Title */
 .header {
    padding: 30px;
    text-align: center;
-   background: lightblue;
+   background: #2f7f9a;
 }
 
 .header h1 {
    font-size: 50px;
+   color: #f2f2f2;
 }
 
 /* Style the top navigation bar */
@@ -59,8 +60,18 @@ body {
     background-color: #f8f8f8;
     resize: none;
 }
-.drillform input[type=text], select {
-    width: 100%;
+.drillform input[type=text] {
+    width: 75%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.drillform select {
+    width: 20%;
     padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
@@ -71,7 +82,6 @@ body {
 
 .drillform input[type=submit] {
     width: 100%;
-    background-color: #4CAF50;
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
@@ -80,21 +90,47 @@ body {
     cursor: pointer;
 }
 
-.drillform input[type=submit]:hover {
-    background-color: #45a049;
+.drillform h3 {
+  color: white;
 }
 
-.drillform div {
+.drillform {
+    width: 80%;
     border-radius: 5px;
-    background-color: #f2f2f2;
-    padding: 20px;
+    border: 3px solid #2f7f9a;
+    background-color: #3999b9;
+    padding: 15px;
 }
 
+/* Drill Card */
 div.drillcard {
   border-radius: 5px;
+  border: 3px solid #51abc9;
   background-color: lightblue;
   padding: 20px;
 }
+
+/* home */
+div.home {
+  border-radius: 5px;
+  border: 3px solid #51abc9;
+  background-color: lightblue;
+  padding: 20px;
+}
+
+div.homesection h3 {
+  color: #2f7f9a;
+}
+
+div.homesection {
+  right: 0px;
+  width: 300px;
+  border-radius: 5px;
+  border: 3px solid #51abc9;
+  background-color: #8ec9dc;
+  padding: 20px;
+}
+
 
 
 /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */

@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { updateDrillFormData } from '../actions/drillForm'
 import { createDrill } from '../actions/drills'
 
+
 class DrillForm extends Component{
 
   handleOnChange = event => {
@@ -13,7 +14,10 @@ class DrillForm extends Component{
 
   handleFormSubmit = event => {
     event.preventDefault();
-    this.props.createDrill(this.props.drillFormData);
+    const {createDrill, history} = this.props
+    debugger
+    createDrill(this.props.drillFormData);
+    history.push('/drills')
   };
 
   render() {

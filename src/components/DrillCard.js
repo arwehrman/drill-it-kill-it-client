@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom'
 
 class DrillCard extends Component {
 
@@ -8,7 +9,7 @@ class DrillCard extends Component {
 
     return (
           <div className="drillcard" >
-          <h3><a href={`drills/${drill.id}`}>{drill.title}</a></h3>
+          <Link key={drill.id} to={`drills/${drill.id}`}>{drill.title}</Link>
             <p>Category: {drill.category}</p>
             <p>Likes: {drill.likes}</p>
           </div>

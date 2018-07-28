@@ -11,8 +11,10 @@ class DrillShow extends Component {
   }
 
   render() {
+
     let drill = this.props.drill[0]
     const { deleteDrill, likeDrill, history} = this.props
+
     return (
       <div>
         {drill ? (
@@ -21,7 +23,7 @@ class DrillShow extends Component {
           <p>Description: {drill.description}</p>
           <p>Category: {drill.category}</p>
           <p>Likes: {drill.likes}</p>
-          <button onClick={() => deleteDrill(drill.id, history.push('/drills'))}>Delete</button>
+          <button onClick={() => deleteDrill(drill.id, history)}>Delete</button>
           <button onClick={() => likeDrill(drill)}>Like</button>
           </div>
       ) : null }

@@ -18,10 +18,10 @@ const addDrill = drill => {
   }
 }
 
-const removeDrill = drillId => {
+const removeDrill = drill => {
   return {
     type: DELETE_DRILL,
-    drillID: drillId,
+    drill: drill,
     }
 }
 
@@ -36,7 +36,8 @@ export const getDrills = () => {
   return dispatch => {
     return fetch(`${API_URL}/drills`)
     .then(response => response.json())
-    .then(drills => dispatch(setDrills(drills)))
+    .then(drills => dispatch(setDrills(drills))
+  )
     .catch(error => console.log(error));
   }
 }
@@ -52,7 +53,7 @@ export const fetchDrill = (drillId) => {
   }
 }
 
-export const createDrill = drill => {
+export const createDrill = (drill, routerHistory) => {
   return dispatch => {
     return fetch(`${API_URL}/drills`, {
       method: "POST",
@@ -64,6 +65,7 @@ export const createDrill = drill => {
     .then(drill => {
       dispatch(addDrill(drill))
       dispatch(resetDrillForm())
+      routerHistory.replace(`/drills/${drill.id}`)
     })
     .catch(error => console.log(error))
   }
@@ -85,11 +87,14 @@ export const likeDrill = drill => {
 }
 
 
-export function deleteDrill(drillId) {
+export function deleteDrill(drillId, routerHistory) {
   return dispatch => {
     return fetch(`${API_URL}/drills/${drillId}`, {
       method: 'DELETE',
-    }).then(res => { dispatch(removeDrill(drillId))
+    }).then(respsonse => {
+        dispatch(removeDrill(drillId));
+        routerHistory.replace('/drills')
     })
+    .catch(error => console.log(error))
   }
 }

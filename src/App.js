@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Drills from './containers/Drills';
-import DrillForm from './containers/DrillForm'
+import DrillForm from './containers/DrillForm';
+import DrillShow from './containers/DrillShow';
 import Header from './components/Header';
 import Home from './components/Home';
 import Contact from './components/Contact'
@@ -18,11 +19,14 @@ class App extends Component {
           <Header />
           <NavBar />
           <div>
-            <br />
-          <Route exact path='/' component={Home} />
-          <Route path='/drills' component={Drills} />
-          <Route path='/contact' component={Contact} />
-          <Route path='/drills/new' component={DrillForm} />
+          <br />
+          <Switch>
+            <Route exact path='/' component={Home} />
+            <Route exact path='/drills' component={Drills} />
+            <Route exact path='/drills/new' compontent={DrillForm}/>
+            <Route path='/drills/:drillId' component={DrillShow}/>
+            <Route path='/contact' component={Contact} />
+          </Switch>
 
         </div>
           <Footer />

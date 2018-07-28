@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import DrillShow from './DrillShow';
+import DrillForm from './DrillForm';
 import DrillCard from '../components/DrillCard'
 import { getDrills} from '../actions/drills'
 import { Switch, Route } from 'react-router-dom';
 
 class Drills extends Component {
+
   componentDidMount() {
     this.props.getDrills()
   }
@@ -15,18 +17,20 @@ class Drills extends Component {
 
     return (
       <div>
-      <br />
+      <DrillForm />
       <Switch>
+      <Route exact path={`drills/new`} component={DrillForm} />
+      <Route path={`${match.url}/:drillId`} component={DrillShow} />
       <Route exact path={match.url}
         render={ () =>
           <div className="drills">
-            <h2>List of Drills</h2>
-            {drills.map(drill => <DrillCard key={drill.id} id={drill.id} drill={ drill } />)}
+            <br />
+            <h1>List of Drills</h1>
+            <br/>
+            {drills.map(drill => <DrillCard key={drill.id} drill={ drill } />)}
           </div>
         }
       />
-      <Route path={`${match.url}/:drillId`} component={DrillShow} />
-
       </Switch>
 
       </div>

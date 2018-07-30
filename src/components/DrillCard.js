@@ -11,7 +11,7 @@ class DrillCard extends Component {
           <div className="drillcard" >
           <Link key={drill.id} to={`drills/${drill.id}`}>{drill.title}</Link>
             <p>Category: {drill.category}</p>
-            <p>Likes: {drill.likes}</p>
+            <p>Level: {drill.level}</p>
           </div>
         )
     }

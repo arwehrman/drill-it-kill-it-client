@@ -1,4 +1,4 @@
-import { GET_DRILLS, CREATE_DRILL, DELETE_DRILL, LIKE_DRILL } from '../constants/actionTypes';
+import { GET_DRILLS, CREATE_DRILL, DELETE_DRILL } from '../constants/actionTypes';
 
 export default(state = [], action) => {
 
@@ -18,15 +18,6 @@ export default(state = [], action) => {
       newState.splice(indexOfDrillToDelete, 1);
       return newState;
     }
-
-    case LIKE_DRILL:
-    return state.map((drill) => {
-      if (drill.id === action.id) {
-        return action.drill
-      } else {
-        return drill
-      }
-    });
 
     default:
       return state;

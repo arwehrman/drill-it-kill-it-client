@@ -19,7 +19,7 @@ class DrillForm extends Component{
   };
 
   render() {
-    const {title, description, category} = this.props.drillFormData;
+    const {title, description, category, level} = this.props.drillFormData;
 
     return (
 
@@ -48,6 +48,16 @@ class DrillForm extends Component{
                   <option value="Jammer">Jammer</option>
                   <option value="Offense">Offense</option>
                 </select><br/><br/>
+            <select
+                 type="text"
+                 name="level"
+                 value={level}
+                 onChange={ event => this.handleOnChange(event)}>
+                   <option></option>
+                   <option value="Beginner">Beginner</option>
+                   <option value="Intermediate">Intermediate</option>
+                   <option value="Advanced">Advanced</option>
+                 </select><br/><br/>
             <button type="submit">Submit</button>
           </form>
         </div>

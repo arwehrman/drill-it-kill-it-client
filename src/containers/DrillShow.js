@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import {likeDrill } from '../actions/drills'
 import {fetchDrill} from '../actions/drills'
 import {deleteDrill} from '../actions/drills'
 
@@ -13,7 +12,7 @@ class DrillShow extends Component {
   render() {
 
     let drill = this.props.drill[0]
-    const { deleteDrill, likeDrill, history} = this.props
+    const { deleteDrill, history} = this.props
 
     return (
       <div>
@@ -22,9 +21,8 @@ class DrillShow extends Component {
           <h1>{drill.title}</h1>
           <p>Description: {drill.description}</p>
           <p>Category: {drill.category}</p>
-          <p>Likes: {drill.likes}</p>
+          <p>Level: {drill.level}</p>
           <button onClick={() => deleteDrill(drill.id, history)}>Delete</button>
-          <button onClick={() => likeDrill(drill)}>Like</button>
           </div>
       ) : null }
     </div>
@@ -38,6 +36,4 @@ const mapStateToProps = (state, ownProps) => {
   })
 }
 
-
-
-export default connect(mapStateToProps, {fetchDrill, deleteDrill, likeDrill})(DrillShow);
+export default connect(mapStateToProps, {fetchDrill, deleteDrill})(DrillShow);

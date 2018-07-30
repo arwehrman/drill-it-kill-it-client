@@ -6,4 +6,3 @@ export const RESET_DRILL_FORM = 'RESET_DRILL_FORM';
 export const GET_DRILLS = 'GET_DRILLS';
 export const CREATE_DRILL = 'CREATE_DRILL';
 export const DELETE_DRILL = 'DELETE_DRILL';
-export const LIKE_DRILL = 'LIKE_DRILL';

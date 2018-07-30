@@ -1,5 +1,5 @@
 import {resetDrillForm} from './drillForm';
-import { GET_DRILLS, CREATE_DRILL, DELETE_DRILL, LIKE_DRILL } from '../constants/actionTypes';
+import { GET_DRILLS, CREATE_DRILL, DELETE_DRILL } from '../constants/actionTypes';
 
 const API_URL = process.env.REACT_APP_API_URL;
 
@@ -25,12 +25,6 @@ const removeDrill = drill => {
     }
 }
 
-export const addLike = drill => {
-  return {
-    type: LIKE_DRILL,
-    drillId: drill,
-  }
-}
 
 export const getDrills = () => {
   return dispatch => {
@@ -68,21 +62,6 @@ export const createDrill = (drill, routerHistory) => {
       routerHistory.replace(`/drills/${drill.id}`)
     })
     .catch(error => console.log(error))
-  }
-}
-
-export const likeDrill = drill => {
-  const updatedDrill = Object.assign(...drill, { likes: drill.likes += 1 })
-  return dispatch => {
-    return fetch(`${API_URL}/drills/${drill.id}`, {
-      method: "PUT",
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({drill: updatedDrill})
-      })
-      .then(response => response.json())
-      .then(drill => { dispatch(addLike(drill))})
   }
 }
 

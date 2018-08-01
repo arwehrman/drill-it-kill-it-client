@@ -10,14 +10,8 @@ export default(state = [], action) => {
     case CREATE_DRILL:
     return [...state, action.drill];
 
-    case DELETE_DRILL:{
-      const newState = Object.assign([], state);
-      const indexOfDrillToDelete = state.findIndex(drill => {
-        return drill.id === action.id
-      })
-      newState.splice(indexOfDrillToDelete, 1);
-      return newState;
-    }
+    case DELETE_DRILL:
+      return state.filter(drill => drill.id !== action.drillId)
 
     default:
       return state;

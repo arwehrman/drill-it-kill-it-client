@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import DrillShow from './DrillShow';
 import DrillForm from './DrillForm';
-import DrillCard from '../components/DrillCard'
+import Drill from '../components/Drill'
 import { getDrills} from '../actions/drills'
 import { Switch, Route } from 'react-router-dom';
 
@@ -27,7 +27,7 @@ class Drills extends Component {
             <br />
             <h1>List of Drills</h1>
             <br/>
-            {drills.map(drill => <DrillCard key={drill.id} drill={ drill } />)}
+            {drills.map(drill => <Drill key={drill.id} drill={ drill } />)}
           </div>
         }
       />

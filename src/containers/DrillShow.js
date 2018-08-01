@@ -5,35 +5,39 @@ import {deleteDrill} from '../actions/drills'
 
 class DrillShow extends Component {
 
-  componentDidMount() {
-    this.props.fetchDrill(this.props.match.params.drillId)
-  }
+  handleOnClick = event => {
+    event.preventDefault()
+    console.log(this.props.drill.id)
+    this.props.deleteDrill(this.props.drill.id).then(this.props.history.push('/drills'))}
 
   render() {
 
-    let drill = this.props.drill[0]
-    const { deleteDrill, history} = this.props
+    const { title, description, category, level } = this.props.drill
 
     return (
-      <div>
-        {drill ? (
-          <div key={drill.id}>
-          <h1>{drill.title}</h1>
-          <p>Description: {drill.description}</p>
-          <p>Category: {drill.category}</p>
-          <p>Level: {drill.level}</p>
-          <button onClick={() => deleteDrill(drill.id, history)}>Delete</button>
+          <div>
+          <h1>{title}</h1>
+          <p>Description: {description}</p>
+          <p>Category: {category}</p>
+          <p>Level: {level}</p>
+          <button onClick={this.handleOnClick}>Delete</button>
           </div>
-      ) : null }
-    </div>
+
     )
   }
 }
 
 const mapStateToProps = (state, ownProps) => {
-  return ({
-    drill: state.drills
-  })
+
+  const propsId = Number(ownProps.match.params.id)
+
+  const drill = state.drills.find(drill => drill.id === propsId)
+
+  if(drill){
+    return { drill }
+  } else {
+    return { drill: {} }
+  }
 }
 
 export default connect(mapStateToProps, {fetchDrill, deleteDrill})(DrillShow);

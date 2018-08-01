@@ -14,7 +14,4 @@ const Drill = ({drill}) => (
 )
 
 
-
-
-
 export default Drill;

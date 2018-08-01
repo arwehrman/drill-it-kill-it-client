@@ -20,13 +20,15 @@ class App extends Component {
           <NavBar />
           <div>
           <br />
-          <Switch>
+
+            <Switch>
             <Route exact path='/' component={Home} />
             <Route exact path='/drills' component={Drills} />
             <Route exact path='/drills/new' compontent={DrillForm}/>
-            <Route path='/drills/:drillId' component={DrillShow}/>
-            <Route path='/contact' component={Contact} />
+            <Route exact path='/drills/:id' component={DrillShow}/>
+            <Route exact path='/contact' component={Contact} />
           </Switch>
+    
 
         </div>
           <Footer />

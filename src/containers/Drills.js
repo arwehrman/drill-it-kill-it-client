@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import DrillShow from './DrillShow';
 import DrillForm from './DrillForm';
 import Drill from '../components/Drill'
 import { getDrills} from '../actions/drills'
-import { Switch, Route } from 'react-router-dom';
+
 
 class Drills extends Component {
 
@@ -13,26 +12,16 @@ class Drills extends Component {
   }
 
   render(){
-     const { match, drills } = this.props;
+     const { drills } = this.props;
 
     return (
       <div>
       <DrillForm />
-      <Switch>
-      <Route exact path={`drills/new`} component={DrillForm} />
-      <Route path={`${match.url}/:drillId`} component={DrillShow} />
-      <Route exact path={match.url}
-        render={ () =>
-          <div className="drills">
-            <br />
-            <h1>List of Drills</h1>
-            <br/>
+        <div className="drills">
+          <br />
+            <h1>List of DrillShow</h1>
             {drills.map(drill => <Drill key={drill.id} drill={ drill } />)}
-          </div>
-        }
-      />
-      </Switch>
-
+        </div>
       </div>
     )
   }

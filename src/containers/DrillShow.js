@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import {fetchDrill} from '../actions/drills'
 import {deleteDrill} from '../actions/drills'
+import { withRouter } from "react-router-dom";
 
 class DrillShow extends Component {
 
@@ -22,7 +22,6 @@ class DrillShow extends Component {
           <p>Level: {level}</p>
           <button onClick={this.handleOnClick}>Delete</button>
           </div>
-
     )
   }
 }
@@ -30,7 +29,6 @@ class DrillShow extends Component {
 const mapStateToProps = (state, ownProps) => {
 
   const propsId = Number(ownProps.match.params.id)
-
   const drill = state.drills.find(drill => drill.id === propsId)
 
   if(drill){
@@ -40,4 +38,4 @@ const mapStateToProps = (state, ownProps) => {
   }
 }
 
-export default connect(mapStateToProps, {fetchDrill, deleteDrill})(DrillShow);
+export default withRouter(connect(mapStateToProps, {deleteDrill})(DrillShow));

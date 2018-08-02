@@ -22,7 +22,6 @@ class DrillForm extends Component{
     const {title, description, category, level} = this.props.drillFormData;
 
     return (
-
         <div className="drillform">
           <h3>Add A Drill</h3>
           <form onSubmit={this.handleFormSubmit}>
@@ -38,6 +37,8 @@ class DrillForm extends Component{
               value={description}
               onChange={ event => this.handleOnChange(event)}
               placeholder="Description"></textarea><br/><br/>
+
+           <label htmlFor="category">Category:</label><br/>
            <select
                 type="text"
                 name="category"
@@ -48,6 +49,8 @@ class DrillForm extends Component{
                   <option value="Jammer">Jammer</option>
                   <option value="Offense">Offense</option>
                 </select><br/><br/>
+
+            <label htmlFor="level">Skill Level:</label><br/>
             <select
                  type="text"
                  name="level"
@@ -61,7 +64,6 @@ class DrillForm extends Component{
             <button type="submit">Submit</button>
           </form>
         </div>
-
     )
   }
 }

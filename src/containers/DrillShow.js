@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import {deleteDrill} from '../actions/drills'
 import { withRouter } from "react-router-dom";
+import './DrillShow.css';
 
 class DrillShow extends Component {
 
@@ -12,10 +13,10 @@ class DrillShow extends Component {
 
   render() {
 
-    const { title, description, category, level } = this.props.drill
-
+    const { title, description, category, level} = this.props.drill
+    console.log(this.props.drill)
     return (
-          <div>
+          <div className="drillshow">
           <h1>{title}</h1>
           <p>Description: {description}</p>
           <p>Category: {category}</p>

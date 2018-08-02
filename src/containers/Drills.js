@@ -19,7 +19,7 @@ class Drills extends Component {
       <DrillForm />
         <div className="drills">
           <br />
-            <h1>List of DrillShow</h1>
+            <h1>Drills</h1>
             {drills.map(drill => <Drill key={drill.id} drill={ drill } />)}
         </div>
       </div>

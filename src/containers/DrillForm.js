@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { updateDrillFormData } from '../actions/drillForm'
 import { createDrill } from '../actions/drills'
-
+import './DrillForm.css'
 
 class DrillForm extends Component{
 

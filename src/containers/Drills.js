@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import DrillForm from './DrillForm';
 import Drill from '../components/Drill'
 import { getDrills} from '../actions/drills'
-
+import './Drills.css'
 
 class Drills extends Component {
 

@@ -35,6 +35,17 @@ export const getDrills = () => {
   }
 }
 
+export const fetchDrill = (drillId) => {
+  return dispatch => {
+    return fetch(`${API_URL}/drills/${drillId}`)
+    .then(response => response.json())
+    .then(drill => {
+      dispatch(setDrills([drill]));
+    })
+    .catch(error => console.log(error));
+  }
+}
+
 export const createDrill = (drill, routerHistory) => {
     return dispatch => {
     return fetch(`${API_URL}/drills`, {

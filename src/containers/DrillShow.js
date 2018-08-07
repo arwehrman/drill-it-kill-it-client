@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import {deleteDrill} from '../actions/drills'
 import { withRouter } from "react-router-dom";
-import './DrillShow.css';
-
+import './DrillShow.css'
 class DrillShow extends Component {
 
   handleOnClick = event => {
@@ -13,8 +12,8 @@ class DrillShow extends Component {
 
   render() {
 
-    const { title, description, category, level} = this.props.drill
-    console.log(this.props.drill)
+    const { title, description, category, level } = this.props.drill
+
     return (
           <div className="drillshow">
           <h1>{title}</h1>

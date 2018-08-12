@@ -13,7 +13,6 @@ class Drills extends Component {
 
   render(){
      const { drills } = this.props;
-
     return (
       <div>
       <DrillForm />

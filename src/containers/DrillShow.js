@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import {deleteDrill, getDrills} from '../actions/drills'
-import { withRouter } from "react-router-dom";
+import {deleteDrill, getDrills} from '../actions/drills';
 import './DrillShow.css'
 class DrillShow extends Component {
 
@@ -9,10 +8,8 @@ class DrillShow extends Component {
     this.props.getDrills()
   }
 
-
   handleOnClick = event => {
     event.preventDefault()
-    console.log(this.props.drill.id)
     this.props.deleteDrill(this.props.drill.id).then(this.props.history.push('/drills'))}
 
   render() {
@@ -32,10 +29,7 @@ class DrillShow extends Component {
 }
 
 const mapStateToProps = (state, ownProps) => {
-
-  const propsId = Number(ownProps.match.params.id)
-  console.log(propsId)
-  const drill = state.drills.find(drill => drill.id === propsId)
+  const drill = state.drills.find(drill => drill.id === parseInt(ownProps.match.params.id, 10))
 
   if(drill){
     return { drill }
@@ -44,4 +38,4 @@ const mapStateToProps = (state, ownProps) => {
   }
 }
 
-export default withRouter(connect(mapStateToProps, {deleteDrill, getDrills})(DrillShow));
+export default connect(mapStateToProps, {deleteDrill, getDrills})(DrillShow);

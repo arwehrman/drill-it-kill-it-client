@@ -11,7 +11,6 @@ const setDrills = drills => {
 }
 
 const addDrill = drill => {
-
   return {
     type: CREATE_DRILL,
     drill,

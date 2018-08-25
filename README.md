@@ -1,43 +1,19 @@
-This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
+# Drill It Kill It
 
-## Sending Feedback
+Drill It Kill It is a roller derby drill application. Users can enter and share their favorite roller derby drills with others.
 
-We are always open to [your feedback](https://github.com/facebookincubator/create-react-app/issues).
+## Installation
 
-## Folder Structure
+Currently the Rails backend is ran separately. You will need to fork and clone both repositories for the Drill It Kill It app.
 
-After creation, your project should look like this:
+Drill It Kill It API : https://github.com/arwehrman/drill-it-kill-it-api
+After forking and cloning the repository, run `rails db:migrate` and then run `rails s -p 3001`
 
-```
-my-app/
-  README.md
-  node_modules/
-  package.json
-  public/
-    index.html
-    favicon.ico
-  src/
-    App.css
-    App.js
-    App.test.js
-    index.css
-    index.js
-    logo.svg
-```
+Drill It Kill It Client: https://github.com/arwehrman/drill-it-kill-it-client
+After forking and cloning the repository, run `bundle install`, `npm install`, `npm start`.
 
-For the project to build, **these files must exist with exact filenames**:
+## Contributing
+Bug reports and pull requests are welcome on GitHub at https://github.com/arwehrman/drill-it-kill-it-client. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
-* `public/index.html` is the page template;
-* `src/index.js` is the JavaScript entry point.
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+## License
+This application is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).

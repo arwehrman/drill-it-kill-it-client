@@ -1,6 +1,6 @@
 # Drill It Kill It
 
-Drill It Kill It is a roller derby drill application. Users can enter and share their favorite roller derby drills with others.
+Drill It Kill It is a roller derby drill application. Users can enter and share their favorite roller derby drills with others. The front-end was created with React and the back-end was created with Rails.
 
 ## Installation
 

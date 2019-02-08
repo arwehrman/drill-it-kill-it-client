@@ -5,14 +5,14 @@
 body {
    font-family: Arial;
    padding: 10px;
-   background: #deeff5;
+   background: #222;
 }
 
 /* Header/Blog Title */
 .header {
    padding: 25px 50px 75px 100px;
    text-align: center;
-   background: #2f7f9a;
+   background: #6b5b95;
 }
 
 .header h1 {
@@ -30,7 +30,7 @@ body {
 /* Style the top navigation bar */
 .navigation {
    overflow: hidden;
-   background-color: #333;
+   background-color: #feb236;
 }
 
 /* Style the topnav links */
@@ -45,7 +45,7 @@ body {
 
 /* Change color on hover */
 .navigation a:hover {
-   background-color: #ddd;
+   background-color: #ff7b25;
    color: black;
 }
 
@@ -53,7 +53,7 @@ body {
 .footer {
    padding: 20px;
    text-align: center;
-   background: #ddd;
+   color: #fff;
    margin-top: 20px;
 }
 

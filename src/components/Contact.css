@@ -1,7 +1,9 @@
-h2 {
-  color: #fff;
+
+div.contact h2 {
+    color: #fff;
+
 }
 
-p {
-  color: #d64161;
+div.contact p {
+    color: #d64161;
 }

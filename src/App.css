@@ -12,7 +12,7 @@ body {
 .header {
    padding: 25px 50px 75px 100px;
    text-align: center;
-   background: #6b5b95;
+   background: #00A1E4;
 }
 
 .header h1 {
@@ -30,7 +30,7 @@ body {
 /* Style the top navigation bar */
 .navigation {
    overflow: hidden;
-   background-color: #feb236;
+   background-color: #04E762;
 }
 
 /* Style the topnav links */
@@ -38,6 +38,7 @@ body {
    float: left;
    display: block;
    color: #f2f2f2;
+   text-shadow: 1px 1px 2px #000000;
    text-align: center;
    padding: 14px 16px;
    text-decoration: none;
@@ -46,7 +47,8 @@ body {
 /* Change color on hover */
 .navigation a:hover {
    background-color: #ff7b25;
-   color: black;
+   color: #f2f2f2;
+
 }
 
 /* Footer */

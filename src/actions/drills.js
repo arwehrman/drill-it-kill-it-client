@@ -38,7 +38,6 @@ export const createDrill = (drill, routerHistory) => {
     return dispatch => {
     return fetch(`${API_URL}/api/drills`, {
       method: "POST",
-      credentials: 'include',
       headers: {
         'Content-Type': 'application/json'
       },
@@ -57,7 +56,6 @@ export function deleteDrill(id) {
   return dispatch => {
     return fetch(`${API_URL}/api/drills/${id}`, {
       method: 'DELETE',
-      credentials: 'include',
     }).then(respsonse => {
         dispatch(removeDrill(id));
     })

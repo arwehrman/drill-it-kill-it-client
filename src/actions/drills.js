@@ -27,7 +27,7 @@ const removeDrill = drillId => {
 
 export const getDrills = () => {
   return dispatch => {
-    return fetch(`${API_URL}/drills`), {
+    return fetch(`${API_URL}/api/drills`), {
       credentials: 'include',
     }
     .then(response => response.json())
@@ -38,7 +38,7 @@ export const getDrills = () => {
 
 export const createDrill = (drill, routerHistory) => {
     return dispatch => {
-    return fetch(`${API_URL}/drills`, {
+    return fetch(`${API_URL}/api/drills`, {
       method: "POST",
       credentials: 'include',
       headers: {
@@ -57,7 +57,7 @@ export const createDrill = (drill, routerHistory) => {
 
 export function deleteDrill(id) {
   return dispatch => {
-    return fetch(`${API_URL}/drills/${id}`, {
+    return fetch(`${API_URL}/api/drills/${id}`, {
       method: 'DELETE',
       credentials: 'include',
     }).then(respsonse => {

@@ -1,17 +1,35 @@
 /* home */
-div.home {
+.home {
   background-color: #F42272;
   padding: 20px;
 }
 
-div.homesection h3 {
+.homesection h3 {
   color: #fff;
+  text-shadow: 2px 2px rgb(46, 46, 46);
 }
 
-div.homesection {
+.homesection {
   right: 0px;
   width: 300px;
   background-color: #f5b700;
   padding: 20px;
+  margin: 20px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.3);
+}
+
+.homesection ul {
+  list-style: none;
+}
+
+.homesection li {
+  padding: 5px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  grid-gap: 10px;
+  background-color: #2196F3;
+  padding: 10px;
 }

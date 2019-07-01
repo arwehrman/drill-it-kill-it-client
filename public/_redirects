@@ -1,0 +1,3 @@
+/api/* https://gentle-sea-16222.herokuapp.com/api/:splat  200
+/*  /index.html  200
+/* /drills

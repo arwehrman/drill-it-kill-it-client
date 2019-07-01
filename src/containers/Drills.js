@@ -19,6 +19,7 @@ class Drills extends Component {
         <div className="drills">
           <br />
             <h1>Drills</h1>
+            <p>Due to the Rails backend being setup on Heroku it may take a few minutes for the drills to load. </p>
             {drills.map(drill => <Drill key={drill.id} drill={ drill } />)}
         </div>
       </div>

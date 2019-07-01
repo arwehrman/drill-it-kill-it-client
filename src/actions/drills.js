@@ -27,9 +27,7 @@ const removeDrill = drillId => {
 
 export const getDrills = () => {
   return dispatch => {
-    return fetch(`${API_URL}/api/drills`), {
-      credentials: 'include',
-    }
+    return fetch(`${API_URL}/api/drills`)
     .then(response => response.json())
     .then(drills => dispatch(setDrills(drills)))
     .catch(error => console.log(error));
